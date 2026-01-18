@@ -1,0 +1,563 @@
+:root {
+    --primary-color: #0066CC;
+    --secondary-color: #001F3F;
+    --accent-color: #4DA6FF;
+    --text-color: #333333;
+    --background-color: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.register-btn {
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'SDK_ID_Web', sans-serif;
+    letter-spacing: 1px;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+    background-color: #0052a3;
+}
+
+/* Hide hamburger by default */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 5px 0;
+    transition: 0.3s ease;
+}
+
+/* Informasi Styles */
+.informasi-container {
+    padding: 120px 5% 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.info-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.info-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.info-header p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%; /* Untuk aspect ratio 2:1 */
+    position: relative;
+    overflow: hidden;
+}
+
+.info-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-image img {
+    transform: scale(1.05);
+}
+
+.info-content {
+    padding: 1.5rem;
+}
+
+.info-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.info-badge {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.info-badge2 {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background-color: #333333;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.info-content h2 {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.info-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.info-update-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.info-update-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 0 4rem;
+}
+
+.footer-text {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.footer-text p {
+    margin: 0;
+    font-family: 'SDK_ID_Web', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    cursor: default;
+}
+
+.footer-text p:hover {
+    transform: translateY(2px) scale(1.05);
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.footer-logo {
+    text-align: right;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.footer-logo img:hover {
+    transform: translateY(2px) scale(1.05);
+    filter: brightness(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.footer-nav {
+    margin: 2rem 0;
+    padding: 0 4rem;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-items a {
+    color: white;
+    text-decoration: none;
+    font-family: 'SDK_ID_Web', sans-serif;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-items a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.footer-bottom p {
+    font-family: 'SDK_ID_Web', sans-serif;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-partners {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.footer-partners img {
+    height: 35px;
+    opacity: 0.9;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+        top: 0;
+        border-radius: 0;
+        padding: 0.8rem 1rem;
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 80%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 5rem 2rem 2rem;
+        transition: 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .nav-buttons {
+        margin: 0;
+        width: 100%;
+    }
+
+    .register-btn {
+        width: 100%;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .info-header h1 {
+        font-size: 2rem;
+    }
+
+    .info-header p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    .footer-nav {
+        padding: 0 2rem;
+    }
+
+    .nav-items {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-partners {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .logo img {
+        height: 28px;
+    }
+
+    .hamburger span {
+        width: 22px;
+    }
+
+    .info-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .info-card {
+        margin: 0 1rem;
+    }
+
+    .info-image {
+        height: 180px;
+    }
+
+    .info-content {
+        padding: 1.2rem;
+    }
+
+    .info-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .footer-content {
+        padding: 0 1rem;
+    }
+
+    .footer-nav {
+        padding: 0 1rem;
+    }
+
+    .footer-partners img {
+        height: 30px;
+    }
+}
+
+/* Navbar Animation */
+.navbar-hidden {
+    transform: translate(-50%, -100%);
+    top: 0;
+}
+
+/* Prevent scrolling when mobile menu is open */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Footer Hover Effects */
+.nav-items a[href*="instagram"]:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+}
+
+.nav-items a[href*="threads"]:hover {
+    background: linear-gradient(45deg, #000000, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+}
+
+.nav-items a[href*="tiktok"]:hover {
+    animation: glitch-tiktok 0.3s infinite;
+    color: #00f2ea;
+    text-shadow: 2px 0 #ff0050, -2px 0 #00f2ea;
+    transform: scale(1.1);
+}
+
+@keyframes glitch-tiktok {
+    0% {
+        text-shadow: 2px 0 #ff0050, -2px 0 #00f2ea;
+    }
+    25% {
+        text-shadow: -2px 0 #ff0050, 2px 0 #00f2ea;
+    }
+    50% {
+        text-shadow: 2px 0 #00f2ea, -2px 0 #ff0050;
+    }
+    75% {
+        text-shadow: -2px 0 #00f2ea, 2px 0 #ff0050;
+    }
+    100% {
+        text-shadow: 2px 0 #ff0050, -2px 0 #00f2ea;
+    }
+}
+
+.nav-items a[href*="youtube"]:hover {
+    color: #ff0000;
+    transform: scale(1.1);
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+.nav-items a[href*="whatsapp"]:hover {
+    color: #25D366;
+    transform: scale(1.1);
+    text-shadow: 0 0 8px rgba(37, 211, 102, 0.4);
+}
